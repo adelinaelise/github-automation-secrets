@@ -1,0 +1,11 @@
+name: Main Production Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  call-python-setup:
+    uses: ./.github/workflows/reusable_python_setup.yml
+    secrets:
+      SECRET_API_KEY: ${{ secrets.SECRET_API_KEY }}
